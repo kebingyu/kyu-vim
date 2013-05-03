@@ -1,0 +1,8 @@
+This is my vim setup using git submodule and pathogen.
+
+Once you clone the git, do:
+
+git submodule init
+git submodule update
+
+Modify vimrc as needed.
