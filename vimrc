@@ -163,7 +163,7 @@
 
 	" NERDTree
 	let NERDTreeShowBookmarks=1
-	let NERDTreeBookmarksFile=s:vim_bundle_path.'nerdtree/.NERDTreeBookmarks'
+	let NERDTreeBookmarksFile=s:vim_path.'.NERDTreeBookmarks'
 	let NERDTreeShowFiles=1
 	let NERDTreeShowHidden=1
 	" Use a single click to fold/unfold directories and a double click to open files
