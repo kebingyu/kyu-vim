@@ -25,6 +25,7 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+	ignore = dirty
 [submodule "bundle/wordpress-syntax"]
 	path = bundle/wordpress-syntax
 	url = https://github.com/kloppster/Wordpress-Vim-Syntax.git
@@ -37,3 +38,4 @@
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
 	url = https://github.com/vim-scripts/vcscommand.vim.git
+	ignore = dirty
