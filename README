@@ -8,14 +8,15 @@ git submodule update
 Modify vimrc as needed.
 
 To update the submodules, run:
+
 git submodule foreach git pull origin master
 
 Plugins I used to make Vim a great PHP IDE:
 - pathogen: one plugin to rule them all
 - nerdtree: tree structure file organization
-- taglist: jump to definition (with Ctags)
-- DBGPavim: step-by-step debugging
+- taglist: jump to definition (requires Ctags)
+- DBGPavim: step-by-step debugging (requires Xdebug)
 - neocomplcache: super powerful autocompletion
 - syntastic: language syntax checkup
-- php-doc: a lightweight commenter
-- vcscommand: a svn/git wrapper
+- php-doc: lightweight commenter
+- vcscommand: svn/git wrapper
