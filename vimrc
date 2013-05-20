@@ -143,7 +143,8 @@
 	set completeopt-=preview
 
 	" taglist
-	let tlist_php_settings = 'php;c:class;f:function;v:variable'
+	"let tlist_php_settings = 'php;c:class;f:function;v:variable'
+	let tlist_php_settings = 'php;c:class;f:function'
 	"let Tlist_Auto_Open = 1          " auto open taglist when open vim
 	let Tlist_Sort_Type = "name"     " sort tags by name
 	let Tlist_Use_SingleClick = 1    " single click tag name to go to tag def (default is double click)
