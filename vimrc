@@ -125,8 +125,13 @@
 	autocmd VimEnter * exec ":call Addtags()" 
 	" save when you forget sudo
 	noremap <leader>W :w !sudo tee % > /dev/null
-	" close all windows but current
+	" close all windows but the current
 	map <leader>o <C-W><C-O>
+	" vim grep
+	nmap <leader>n :cn<cr>
+	nmap <leader>w :cw<cr>
+	nmap <leader>p :cp<cr>
+
 " }
 "
 "
