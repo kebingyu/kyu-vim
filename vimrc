@@ -16,6 +16,9 @@
 	syntax on							" syntax highlighting
 	"set mouse=a						" automatically enable mouse usage
 	scriptencoding utf-8
+    set fileencodings=utf-8,gb2312,gbk,gb18030
+    set termencoding=utf-8
+    set encoding=prc
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	set virtualedit=onemore				" allow for cursor beyond last character
 	"set spell							" spell checking on
