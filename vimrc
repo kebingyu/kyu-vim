@@ -3,7 +3,7 @@
 	set nocompatible
 	execute pathogen#infect()
 	execute pathogen#helptags()
-	let s:vim_path        = "/home/kyu/.vim/"
+	let s:vim_path        = $HOME."/.vim/"
 	let s:working_path    = "/var/www/sites/"
 	let s:tag_file_path   = s:vim_path."tags/"
 	let s:vim_bundle_path = s:vim_path."bundle/"
