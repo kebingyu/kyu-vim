@@ -66,6 +66,10 @@
 	set wildmenu			" enable wildmenu
 	set wildmode=longest:full
 	set winminheight=0		" windows can be 0 line high
+	" ignore these files while expanding wild chars
+	set wildignore+=.svn,CVS,.git
+	set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
+	set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg
 	"set list
     "set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 	set splitbelow
@@ -82,6 +86,9 @@
 	set ts=4
 	set sw=4
 	set softtabstop=4 				" let backspace delete indent
+	autocmd FileType c,cpp,cc  set cindent
+	autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+	autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 	"autocmd FileType c,cpp,java,php,js,perl,python,twig,xml,yml
@@ -113,8 +120,8 @@
 	map <C-L> <C-W>l<C-W>_
 	map <C-M> <C-W>_
 	if bufwinnr(1)
-		map <leader>9 <C-W>+
-		map <leader>0 <C-W>-
+		map + <C-W>+
+		map - <C-W>-
 	endif
 	" Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
