@@ -95,6 +95,7 @@
 	au BufRead,BufNewFile *.tpl set filetype=html
 	au BufRead,BufNewFile *.mtml set filetype=xhtml
 	au BufRead,BufNewFile *.js set syntax=jquery
+	set foldmethod=marker
 	" set row length and highlight text goes over
 	set textwidth=100
 	set formatoptions+=t
