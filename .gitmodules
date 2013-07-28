@@ -37,5 +37,5 @@
 	url = https://github.com/vim-scripts/vcscommand.vim.git
 	ignore = dirty
 [submodule "bundle/tabular"]
-    path = bundle/tabular
-    url = https://github.com/godlygeek/tabular.git
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
