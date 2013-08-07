@@ -11,6 +11,7 @@
 "
 "
 " General {
+	set history=100
 	set background=dark					" assume a dark background
 	filetype plugin indent on			" indent automatically depending on filetype
 	syntax on							" syntax highlighting
