@@ -195,26 +195,30 @@
 " My Functions {
 	" load ctags tagfiles
 	" to use, type :call Addtags(). One file has to be opened currently
-	function Addtags() 
-		let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
-		if filereadable(s:tag_file_path.l:name)
-			exec "set tags+=".s:tag_file_path.l:name
-			echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
-		else
-			echohl WarningMsg | echo "Fail to add tags! No tags in this file's path.[name: ".l:name."]" | echohl None
-		endif
-	endfunction
+	if !exists("*Addtags")
+		function Addtags() 
+			let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
+			if filereadable(s:tag_file_path.l:name)
+				exec "set tags+=".s:tag_file_path.l:name
+				echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
+			else
+				echohl WarningMsg | echo "Fail to add tags! No tags in this file's path.[name: ".l:name."]" | echohl None
+			endif
+		endfunction
+	endif
 
 	" unload ctags tagfiles
-	function Deltags()
-		let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
-		exec "set tags-=".s:tag_file_path.l:name
-		if filereadable(s:tag_file_path.l:name)
-			echohl WarningMsg | echo "Succ to del tags! [name: ".l:name."]" | echohl None
-		else
-			echohl WarningMsg | echo "Succ to del tags! But no tags in this file's path.[name: ".l:name."]" | echohl None
-		endif
-	endfunction
+	if !exists("*Deltags")
+		function Deltags()
+			let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
+			exec "set tags-=".s:tag_file_path.l:name
+			if filereadable(s:tag_file_path.l:name)
+				echohl WarningMsg | echo "Succ to del tags! [name: ".l:name."]" | echohl None
+			else
+				echohl WarningMsg | echo "Succ to del tags! But no tags in this file's path.[name: ".l:name."]" | echohl None
+			endif
+		endfunction
+	endif
 
 	" show diff between the currently edited file and its unmodified version in the filesystem
 	" To get out of diff view you can use the :diffoff command.
@@ -230,22 +234,24 @@
 	" Toggle Nerdtree and taglist at the same time
 	let s:tag_list_switch  = 0
 	let s:nerd_tree_switch = 0
-	function ToggleAll()
-	if s:tag_list_switch == 1
-		TlistClose
-		let s:tag_list_switch = 0
-	else
-		Tlist
-		let s:tag_list_switch = 1
+	if !exists("*ToggleAll")
+		function ToggleAll()
+		if s:tag_list_switch == 1
+			TlistClose
+			let s:tag_list_switch = 0
+		else
+			Tlist
+			let s:tag_list_switch = 1
+		endif
+		if s:nerd_tree_switch == 1
+			NERDTreeClose
+			let s:nerd_tree_switch = 0
+		else
+			NERDTree
+			let s:nerd_tree_switch = 1
+		endif
+		endfunction
 	endif
-	if s:nerd_tree_switch == 1
-		NERDTreeClose
-		let s:nerd_tree_switch = 0
-	else
-		NERDTree
-		let s:nerd_tree_switch = 1
-	endif
-	endfunction
 	nmap <silent> <C-N> :call ToggleAll()<CR>
 
 	function! HasPaste()
