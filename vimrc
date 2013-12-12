@@ -4,7 +4,7 @@
 	execute pathogen#infect()
 	execute pathogen#helptags()
 	let s:vim_path        = $HOME."/.vim/"
-	let s:working_path    = "/var/www/sites/"
+	let s:working_path    = "dev/education/"
 	let s:tag_file_path   = s:vim_path."tags/"
 	let s:vim_bundle_path = s:vim_path."bundle/"
 " }
@@ -197,7 +197,10 @@
 	" to use, type :call Addtags(). One file has to be opened currently
 	if !exists("*Addtags")
 		function Addtags() 
-			let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
+			exec "set tags+=~/.vim/tags/gcommon"
+			exec "set tags+=~/.vim/tags/vcommon"
+			exec "set tags+=~/.vim/tags/multivertical"
+			let l:name = tolower(matchstr(expand('%:p'), s:working_path.'\zs\w\+\ze/\='))
 			if filereadable(s:tag_file_path.l:name)
 				exec "set tags+=".s:tag_file_path.l:name
 				echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
@@ -210,7 +213,7 @@
 	" unload ctags tagfiles
 	if !exists("*Deltags")
 		function Deltags()
-			let l:name = tolower(matchstr(getcwd(), s:working_path.'\zs\w\+\ze/\='))
+			let l:name = tolower(matchstr(expand('%:p'), s:working_path.'\zs\w\+\ze/\='))
 			exec "set tags-=".s:tag_file_path.l:name
 			if filereadable(s:tag_file_path.l:name)
 				echohl WarningMsg | echo "Succ to del tags! [name: ".l:name."]" | echohl None
