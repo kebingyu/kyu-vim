@@ -4,7 +4,7 @@
 	execute pathogen#infect()
 	execute pathogen#helptags()
 	let s:vim_path        = $HOME."/.vim/"
-	let s:working_path    = "dev/education/"
+	let s:working_path    = "/var/www/sites/"
 	let s:tag_file_path   = s:vim_path."tags/"
 	let s:vim_bundle_path = s:vim_path."bundle/"
 " }
@@ -120,7 +120,10 @@
 	map <C-K> <C-W>k<C-W>_
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
+	" maximize the current window
 	map <C-M> <C-W>_
+	" rotate the current windown downward
+	map <C-X> <C-W><C-X><C-J>
 	if bufwinnr(1)
 		map + <C-W>+
 		map - <C-W>-
@@ -200,7 +203,7 @@
 			exec "set tags+=~/.vim/tags/gcommon"
 			exec "set tags+=~/.vim/tags/vcommon"
 			exec "set tags+=~/.vim/tags/multivertical"
-			let l:name = tolower(matchstr(expand('%:p'), s:working_path.'\zs\w\+\ze/\='))
+			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
 			if filereadable(s:tag_file_path.l:name)
 				exec "set tags+=".s:tag_file_path.l:name
 				echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
@@ -213,7 +216,7 @@
 	" unload ctags tagfiles
 	if !exists("*Deltags")
 		function Deltags()
-			let l:name = tolower(matchstr(expand('%:p'), s:working_path.'\zs\w\+\ze/\='))
+			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
 			exec "set tags-=".s:tag_file_path.l:name
 			if filereadable(s:tag_file_path.l:name)
 				echohl WarningMsg | echo "Succ to del tags! [name: ".l:name."]" | echohl None
