@@ -34,7 +34,17 @@
 "
 "
 " Vim UI {
-	set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI
+    if has("gui_running")
+        if has("gui_macvim")
+            set guifont=Menlo\ Regular:h14
+        elseif has("gui_win32")
+            set guifont=Consolas:h11:cANSI
+        else 
+            set guifont=DejaVu\ Sans\ Mono\ 11
+        endif
+    else 
+	    set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI
+    endif
 	set t_Co=256
 	colorscheme wombat256mod
 	set cursorline			" hightlight current line
@@ -84,6 +94,7 @@
 	"set paste						" prevent vim from adding incremented tabs when pasting
 	set ai							" auto increment: not compatible with paste
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
+	set expandtab
 	set ts=4
 	set sw=4
 	set softtabstop=4 				" let backspace delete indent
