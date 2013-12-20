@@ -39,3 +39,9 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/genutils"]
+	path = bundle/genutils
+	url = https://github.com/vim-scripts/genutils.git
+[submodule "bundle/perforce"]
+	path = bundle/perforce
+	url = https://github.com/vim-scripts/perforce.git
