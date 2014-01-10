@@ -205,9 +205,10 @@
 	"nmap <silent> <C-N> :NERDTreeToggle<CR>
     
     " Perforce vim integration
-    "let g:p4EnableRuler = 0
-    "let g:p4EnableActiveStatus = 0
-    let g:p4Depot = 'qs_kyu'
+    let g:p4EnableRuler = 0
+    let g:p4EnableActiveStatus = 0
+    let g:p4DefaultPreset = '10.1.10.97:1666 qs_kyu kyu'
+    "let g:p4Depot = 'qs_kyu'
     command! P4Status PF changes -u kyu -s pending
 	nmap <leader>ps :P4Status<cr>
 	nmap <leader>pa :PA<cr>

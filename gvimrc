@@ -13,7 +13,10 @@
 " http://www.cs.cmu.edu/~maverick/VimColorSchemeTest/ has examples and
 " downloads for the colorschemes on vim.org
 "
+" enable mouse right click menu
 set mousemodel=popup
+" maximize the window
+set lines=999 columns=999
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/gvimrc.local")
