@@ -204,6 +204,9 @@
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
 	"nmap <silent> <C-N> :NERDTreeToggle<CR>
     
+    " Syntastic
+	nmap <leader>s :SyntasticReset<CR>
+
     " Perforce vim integration
 	if filereadable(expand(s:vim_path."perforce.conf"))
 		exec ":source ".s:vim_path."perforce.conf"
