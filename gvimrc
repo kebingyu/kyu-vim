@@ -17,6 +17,8 @@
 set mousemodel=popup
 " maximize the window
 set lines=999 columns=999
+" mouse single click open/close fold
+set foldcolumn=3
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/gvimrc.local")
