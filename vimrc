@@ -220,9 +220,11 @@
 	" to use, type :call Addtags(). One file has to be opened currently
 	if !exists("*Addtags")
 		function Addtags() 
-			exec "set tags+=~/.vim/tags/gcommon"
-			exec "set tags+=~/.vim/tags/vcommon"
-			exec "set tags+=~/.vim/tags/multivertical"
+            if (getcwd() =~ '/dms')
+                exec "set tags+=~/.vim/tags/gcommon"
+                exec "set tags+=~/.vim/tags/vcommon"
+                exec "set tags+=~/.vim/tags/multivertical"
+            endif 
 			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
 			if filereadable(s:tag_file_path.l:name)
 				exec "set tags+=".s:tag_file_path.l:name
