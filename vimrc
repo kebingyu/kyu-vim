@@ -101,6 +101,7 @@
 	set softtabstop=4 				" let backspace delete indent
 	autocmd FileType c,cpp,cc  set cindent
 	autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+	autocmd FileType js setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 	autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
