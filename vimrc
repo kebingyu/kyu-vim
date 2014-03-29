@@ -1,5 +1,5 @@
 "
-" Environment {
+" Environment {"{{{
 	set nocompatible
 	execute pathogen#infect()
 	execute pathogen#helptags()
@@ -7,10 +7,9 @@
 	let s:working_path    = "/var/www/sites/"
 	let s:tag_file_path   = s:vim_path."tags/"
 	let s:vim_bundle_path = s:vim_path."bundle/"
-" }
+" }"}}}
 "
-"
-" General {
+" General {"{{{
 	set history=100
     set undolevels=1000
 	set background=dark					" assume a dark background
@@ -31,10 +30,9 @@
 	let mapleader = ","					" do extra key combinations with a map leader 
 	"set autochdir						" automatically change working dir to current opened file
 	set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-" }
+" }"}}}
 "
-"
-" Vim UI {
+" Vim UI {"{{{
     if has("gui_running")
         if has("gui_macvim")
             set guifont=Menlo\ Regular:h14
@@ -86,10 +84,9 @@
     "set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 	set splitbelow
 	set cmdheight=2
-" }
+" }"}}}
 "
-"
-" Formatting {
+" Formatting {"{{{
 	set scrolloff=1					" 1 line margin when moving cursor
 	set wrapscan
 	"set paste						" prevent vim from adding incremented tabs when pasting
@@ -121,10 +118,9 @@
 	"endif
 	highlight OverLength ctermbg=16 ctermfg=7 guibg=blue
 	match OverLength /\%101v.\+/
-" }
+" }"}}}
 "
-"
-" Key Mapping {
+" Key Mapping {"{{{
 	" redraw the screen and clear search highlights
 	":noremap <silent> <c-l> :nohls<cr><c-l>
 	nmap <leader>l :nohls<cr>
@@ -158,11 +154,9 @@
 	nmap <leader>n :cn<cr>
 	nmap <leader>w :cw<cr>
 	nmap <leader>p :cp<cr>
-
-" }
+" }"}}}
 "
-"
-" Plugins {
+" Plugins {"{{{
 	" include php-doc.vim (auto documentation for php)
 	exec ":source ".s:vim_bundle_path."php-doc/php-doc.vim"
 	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
@@ -213,10 +207,9 @@
 	if filereadable(expand(s:vim_path."perforce.conf"))
 		exec ":source ".s:vim_path."perforce.conf"
     endif
-" }
+" }"}}}
 "
-"
-" My Functions {
+" My Functions {"{{{
 	" load ctags tagfiles
 	" to use, type :call Addtags(). One file has to be opened currently
 	if !exists("*Addtags")
@@ -289,11 +282,10 @@
 		en
 		return ''
 	endfunction
-" }
+" }"}}}
 " 
-"
-" Use local vimrc if available {
+" Use local vimrc if available {"{{{
 	if filereadable(expand(s:vim_path.".vimrc.local"))
 		exec ":source ".s:vim_path.".vimrc.local"
     endif
-" }
+" }"}}}
