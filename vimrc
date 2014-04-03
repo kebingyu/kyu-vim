@@ -227,7 +227,7 @@
 				exec "set tags+=".s:tag_file_path.l:name
 				echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
 			else
-				echohl WarningMsg | echo "Fail to add tags! No tags in this file's path.[name: ".l:name."]" | echohl None
+				"echohl WarningMsg | echo "Fail to add tags! No tags in this file's path.[name: ".l:name."]" | echohl None
 			endif
 		endfunction
 	endif
