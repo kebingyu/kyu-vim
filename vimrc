@@ -108,7 +108,7 @@
 	"au BufRead,BufNewFile *.js set syntax=jquery
 	set foldmethod=marker
 	" set row length and highlight text goes over
-	set textwidth=100
+	set textwidth=120
 	set formatoptions+=t
 	set wrapmargin=1
 	"if exists('+colorcolumn')
@@ -117,7 +117,7 @@
 		"au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 	"endif
 	highlight OverLength ctermbg=16 ctermfg=7 guibg=blue
-	match OverLength /\%101v.\+/
+	match OverLength /\%121v.\+/
 " }"}}}
 "
 " Key Mapping {"{{{
