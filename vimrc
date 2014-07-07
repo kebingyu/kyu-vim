@@ -105,7 +105,7 @@
 	"autocmd FileType c,cpp,java,php,js,perl,python,twig,xml,yml
 	au BufRead,BufNewFile *.tpl set filetype=html
 	au BufRead,BufNewFile *.mtml set filetype=xhtml
-	au BufRead,BufNewFile *.js set syntax=jquery
+	"au BufRead,BufNewFile *.js set syntax=jquery
 	set foldmethod=marker
 	" set row length and highlight text goes over
 	set textwidth=100
@@ -210,6 +210,9 @@
 	if filereadable(expand(s:vim_path."perforce.conf"))
 		exec ":source ".s:vim_path."perforce.conf"
     endif
+
+    " javascript-libraries-syntax.vim
+    let g:used_javascript_libs = 'jquery,backbone'
 " }"}}}
 "
 " My Functions {"{{{
