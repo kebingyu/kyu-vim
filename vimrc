@@ -121,9 +121,6 @@
 " }"}}}
 "
 " Key Mapping {"{{{
-	" redraw the screen and clear search highlights
-	":noremap <silent> <c-l> :nohls<cr><c-l>
-	nmap <leader>l :nohls<cr>
 	" Ctrl+kjhl Navigation between splitted windows
 	map <C-J> <C-W>j<C-W>_
 	map <C-K> <C-W>k<C-W>_
@@ -137,23 +134,37 @@
 		map + <C-W>+
 		map - <C-W>-
 	endif
-	" Wrapped lines goes down/up to next row, rather than next line in file.
-    nnoremap j gj
-    nnoremap k gk
-	nnoremap Y y$
+    " open nerdtree and taglist at the same time
+	nmap <silent> <C-N> :call ToggleAll()<CR>
+    " php-doc
+	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+	nnoremap <C-P> :call PhpDocSingle()<CR>
+	vnoremap <C-P> :call PhpDocRange()<CR>
+	" ctags: open definition in a split window
+	map <C-Y> <C-W><C-]>
+
+	" redraw the screen and clear search highlights
+	nmap <leader>l :nohls<cr>
 	" load/unload tag files
 	nmap <leader>a :call Addtags()<cr>
 	nmap <leader>d :call Deltags()<cr>
-	" load tag file when open vim
-	autocmd VimEnter * exec ":call Addtags()" 
 	" save when you forget sudo
 	noremap <leader>W :w !sudo tee % > /dev/null
 	" close all windows but the current
 	map <leader>o <C-W><C-O>
-	" vim grep
+	" vimgrep
 	nmap <leader>n :cn<cr>
 	nmap <leader>w :cw<cr>
 	nmap <leader>p :cp<cr>
+	" ctags: open definition in a split window
+	map <leader>j <C-W>g]
+    " Syntastic
+	nmap <leader>s :SyntasticReset<CR>
+    
+	" Wrapped lines goes down/up to next row, rather than next line in file.
+    nnoremap j gj
+    nnoremap k gk
+	nnoremap Y y$
 " }"}}}
 "
 " Plugins {"{{{
@@ -162,9 +173,6 @@
 
 	" include php-doc.vim (auto documentation for php)
 	exec ":source ".s:vim_bundle_path."php-doc/php-doc.vim"
-	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-	nnoremap <C-P> :call PhpDocSingle()<CR>
-	vnoremap <C-P> :call PhpDocRange()<CR>
 
 	" neocomplcache configuration
 	exec ":source ".s:vim_path."neocomplcache.conf"
@@ -186,10 +194,9 @@
 	"nmap <silent> <F4>  :TlistToggle<CR>        
 
 	" ctag
+	" load tag file when open vim
+	autocmd VimEnter * exec ":call Addtags()" 
 	"map <C-Y> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-	"open definition in a split window
-	map <C-Y> <C-W><C-]>
-	map <leader>j <C-W>g]
 
 	" NERDTree
 	let NERDTreeShowBookmarks=1
@@ -202,9 +209,6 @@
 	"autocmd VimEnter * NERDTree  "open nerdtree when open vim
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
 	"nmap <silent> <C-N> :NERDTreeToggle<CR>
-    
-    " Syntastic
-	nmap <leader>s :SyntasticReset<CR>
 
     " Perforce vim integration
 	if filereadable(expand(s:vim_path."perforce.conf"))
@@ -280,7 +284,6 @@
 		endif
 		endfunction
 	endif
-	nmap <silent> <C-N> :call ToggleAll()<CR>
 
 	function! HasPaste()
 		if &paste
