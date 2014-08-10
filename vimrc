@@ -300,4 +300,4 @@
 " }"}}}
 "
 " check php sytax for the current file :!php -l %:p
-" update current vimrc :so % (use when vimrc is the current file)
+" update current vimrc :so % (use when vimrc is the current file) or :source $MYVIMRC
