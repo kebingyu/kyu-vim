@@ -102,6 +102,8 @@
 	autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    " remove '-' from word end list
+    autocmd FileType php setlocal iskeyword-=-
 	"autocmd FileType c,cpp,java,php,js,perl,python,twig,xml,yml
 	au BufRead,BufNewFile *.tpl set filetype=html
 	au BufRead,BufNewFile *.mtml set filetype=xhtml
