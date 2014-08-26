@@ -167,6 +167,8 @@
     nnoremap j gj
     nnoremap k gk
 	nnoremap Y y$
+    " check php sytax for the current file
+	nmap <leader>pl :!php -l %:p<cr>
 " }"}}}
 "
 " Plugins {"{{{
@@ -301,5 +303,4 @@
     endif
 " }"}}}
 "
-" check php sytax for the current file :!php -l %:p
 " update current vimrc :so % (use when vimrc is the current file) or :source $MYVIMRC

@@ -19,6 +19,8 @@ set mousemodel=popup
 set lines=999 columns=999
 " mouse single click open/close fold
 set foldcolumn=3
+" ignore white space in diff mode
+set diffopt+=iwhite
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/gvimrc.local")
