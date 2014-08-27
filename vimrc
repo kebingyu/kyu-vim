@@ -138,6 +138,8 @@
 	endif
     " open nerdtree and taglist at the same time
 	nmap <silent> <C-N> :call ToggleAll()<CR>
+	nmap <leader>tt :TlistToggle<cr>
+	nmap <leader>tn :NERDTreeToggle<cr>
     " php-doc
 	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 	nnoremap <C-P> :call PhpDocSingle()<CR>
@@ -268,24 +270,10 @@
 	com! DiffSaved call s:DiffWithSaved()
 
 	" Toggle Nerdtree and taglist at the same time
-	let s:tag_list_switch  = 0
-	let s:nerd_tree_switch = 0
 	if !exists("*ToggleAll")
 		function ToggleAll()
-		if s:tag_list_switch == 1
-			TlistClose
-			let s:tag_list_switch = 0
-		else
-			Tlist
-			let s:tag_list_switch = 1
-		endif
-		if s:nerd_tree_switch == 1
-			NERDTreeClose
-			let s:nerd_tree_switch = 0
-		else
-			NERDTree
-			let s:nerd_tree_switch = 1
-		endif
+			TlistToggle
+            NERDTreeToggle
 		endfunction
 	endif
 
