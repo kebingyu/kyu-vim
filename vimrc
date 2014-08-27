@@ -55,7 +55,7 @@
 	if has("statusline")
 		set statusline=%<%f								" Filename
 		set statusline+=\ %w%h%m%r						" Options
-		"set statusline+=\ [%{HasPaste()}]				" check paste
+		set statusline+=\ [%{HasPaste()}]				" check paste
 		"set statusline+=\ [%{getcwd()}]				" current dir
 		"set statusline+=\ [A=\%03.3b/H=\%02.2B]		" ASCII / Hexadecimal value of char
 		set statusline+=%=
@@ -64,7 +64,7 @@
 		set statusline+=%*
 		set statusline+=\ [%{&ff}/%Y]					" filetype
 		set statusline+=\ \ %-14.(%l,%c%V%)\ %p%%		" Right aligned file nav info
-		hi StatusLine   ctermbg=245 ctermfg=black		" active status line
+		hi StatusLine   ctermbg=25 ctermfg=white		" active status line
 		hi StatusLineNC ctermbg=237 ctermfg=245			" inactive status line
 	endif
 	set ru
