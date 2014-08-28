@@ -136,9 +136,9 @@
 		map + <C-W>+
 		map - <C-W>-
 	endif
-    " open nerdtree and taglist at the same time
+    " open nerdtree and tagbar at the same time
 	nmap <silent> <C-N> :call ToggleAll()<CR>
-	nmap <leader>tt :TlistToggle<cr>
+	nmap <leader>tt :TagbarToggle<cr>
 	nmap <leader>tn :NERDTreeToggle<cr>
     " php-doc
 	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
@@ -185,19 +185,10 @@
 	" disable preview scratch window
 	set completeopt-=preview
 
-	" taglist
-	"let tlist_php_settings = 'php;c:class;f:function;v:variable'
-	let tlist_php_settings = 'php;c:class;f:function'
-	"let Tlist_Auto_Open = 1          " auto open taglist when open vim
-	let Tlist_Sort_Type = "name"     " sort tags by name
-	let Tlist_Use_SingleClick = 1    " single click tag name to go to tag def (default is double click)
-	let Tlist_Enable_Fold_Column = 0 " disable left fold column
-	let Tlist_WinWidth = 30          " set taglist width
-	let Tlist_Show_One_File = 1      " only show taglist for current opened file 
-	let g:Tb_ForceSyntaxEnable = 1
-	let Tlist_Use_Right_Window = 1   " put taglist window to the right-hand side
-	let Tlist_Max_Submenu_Items = 20 " max number of items in submenu
-	"nmap <silent> <F4>  :TlistToggle<CR>        
+    " tagbar
+    let g:tagbar_width=30
+    let g:tagbar_show_linenumbers=-1
+    let g:tagbar_foldlevel=0
 
 	" ctag
 	" load tag file when open vim
@@ -214,7 +205,6 @@
 	let NERDTreeIgnore=[ '\.pyo$', '\.py\$class$', '^\.svn$', '^\.git$' ]
 	"autocmd VimEnter * NERDTree  "open nerdtree when open vim
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
-	"nmap <silent> <C-N> :NERDTreeToggle<CR>
 
     " Perforce vim integration
 	if filereadable(expand(s:vim_path."perforce.conf"))
@@ -269,11 +259,12 @@
 	endfunction
 	com! DiffSaved call s:DiffWithSaved()
 
-	" Toggle Nerdtree and taglist at the same time
+	" Toggle Nerdtree and tagbar at the same time
 	if !exists("*ToggleAll")
 		function ToggleAll()
-			TlistToggle
+			TagbarToggle
             NERDTreeToggle
+	        autocmd VimEnter * wincmd p  "put cursor to the file opened 
 		endfunction
 	endif
 
