@@ -79,7 +79,7 @@ let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = ""
 let g:pdv_cfg_Author = ""
-let g:pdv_cfg_Copyright = "Internet Brands Inc."
+let g:pdv_cfg_Copyright = "Copyright (c) 2011 Quinstreet, Inc."
 let g:pdv_cfg_License = ""
 
 let g:pdv_cfg_ReturnVal = "void"

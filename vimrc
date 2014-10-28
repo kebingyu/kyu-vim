@@ -39,7 +39,7 @@
         elseif has("gui_win32")
             set guifont=Consolas:h11:cANSI
         else 
-            set guifont=DejaVu\ Sans\ Mono\ 11
+            set guifont=DejaVu\ Sans\ Mono\ 10
         endif
     else 
 	    set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI
@@ -128,6 +128,9 @@
 	map <C-K> <C-W>k<C-W>_
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
+    " quick move to head/tail
+	nmap <leader>h 0<cr>
+	nmap <leader>t $<cr>
 	" maximize the current window
 	map <C-M> <C-W>_
 	" rotate the current windown downward
