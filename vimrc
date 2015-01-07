@@ -133,7 +133,9 @@
 	nmap <leader>t $<cr>
 	" maximize the current window
 	map <C-M> <C-W>_
-	" rotate the current windown downward
+	" move the current window up
+	map <C-Z> <C-K><C-W><C-X><C-W>_
+	" move the current window down
 	map <C-X> <C-W><C-X><C-J>
 	if bufwinnr(1)
 		map + <C-W>+
@@ -265,7 +267,7 @@
 	" Toggle Nerdtree and tagbar at the same time
 	if !exists("*ToggleAll")
 		function ToggleAll()
-			TagbarToggle
+			"TagbarToggle
             NERDTreeToggle
 	        autocmd VimEnter * wincmd p  "put cursor to the file opened 
 		endfunction
