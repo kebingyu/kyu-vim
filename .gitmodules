@@ -53,3 +53,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/php-doc"]
+	path = bundle/php-doc
+	url = https://github.com/kebingyu/php-doc.git
