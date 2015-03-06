@@ -182,9 +182,6 @@
     " Turn brief mode on (Simply Javascript Indenter)
     let g:SimpleJsIndenter_BriefMode = 1
 
-	" include php-doc.vim (auto documentation for php)
-	exec ":source ".s:vim_bundle_path."php-doc/php-doc.vim"
-
 	" neocomplcache configuration
 	exec ":source ".s:vim_path."neocomplcache.conf"
 	" disable preview scratch window
