@@ -269,13 +269,6 @@
 	        autocmd VimEnter * wincmd p  "put cursor to the file opened 
 		endfunction
 	endif
-
-	function! HasPaste()
-		if &paste
-			return 'PASTE MODE '
-		en
-		return ''
-	endfunction
 " }"}}}
 " 
 " Use local vimrc if available {"{{{

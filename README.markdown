@@ -1,4 +1,4 @@
-## This is my vim setup using git submodule and pathogen.
+## My vim setup using submodule and pathogen
 
 Once the git is cloned, run:
 
