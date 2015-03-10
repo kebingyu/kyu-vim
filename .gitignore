@@ -6,3 +6,5 @@ bundle/neocomplcache/doc/tags
 bundle/taglist/doc/tags
 .netrwhist
 perforce.conf
+.DS_Store
+bundle/.DS_Store
