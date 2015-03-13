@@ -278,6 +278,8 @@
 
     " default documentor for php/js
     func! DocDefault()
+        let l:paste = &g:paste
+        let &g:paste = 1
         " Line for the comment to begin
         let commentline = line (".") - 1
         let l:indent = matchstr(getline("."), '^\ *')
@@ -289,6 +291,7 @@
         exe l:txtBOL . ' *  ' . l:eol
         " Close the comment block.
         exe l:txtBOL . ' */' . l:eol
+        let &g:paste = l:paste
     endfunc
 " }"}}}
 " 
