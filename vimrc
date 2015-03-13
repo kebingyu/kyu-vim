@@ -172,6 +172,9 @@
 	nnoremap Y y$
     " check php sytax for the current file
 	nmap <leader>pl :!php -l %:p<cr>
+    " documentor
+    inoremap <C-P> <ESC>:call DocDefault()<CR>i
+    nnoremap <C-P> :call DocDefault()<CR>
 " }"}}}
 "
 " Plugins {"{{{
@@ -266,13 +269,27 @@
 		endfunction
 	endif
 
-
     function! HasPaste()
         if &paste
             return 'PASTE MODE '
         en
         return ''
     endfunction
+
+    " default documentor for php/js
+    func! DocDefault()
+        " Line for the comment to begin
+        let commentline = line (".") - 1
+        let l:indent = matchstr(getline("."), '^\ *')
+        exe "norm! " . commentline . "G$"
+        " Local indent
+        let l:txtBOL = 'norm! o' . indent
+        let l:eol = ""
+        exe l:txtBOL . '/**' . l:eol
+        exe l:txtBOL . ' *  ' . l:eol
+        " Close the comment block.
+        exe l:txtBOL . ' */' . l:eol
+    endfunc
 " }"}}}
 " 
 " Use local vimrc if available {"{{{
