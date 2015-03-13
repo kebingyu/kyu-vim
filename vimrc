@@ -145,10 +145,6 @@
 	nmap <silent> <C-N> :call ToggleAll()<CR>
 	nmap <leader>tt :TagbarToggle<cr>
 	nmap <leader>tn :NERDTreeToggle<cr>
-    " php-doc
-	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-	nnoremap <C-P> :call PhpDocSingle()<CR>
-	vnoremap <C-P> :call PhpDocRange()<CR>
 	" ctags: open definition in a split window
 	map <C-Y> <C-W><C-]>
 

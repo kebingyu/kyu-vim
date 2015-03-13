@@ -19,9 +19,6 @@
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
-[submodule "bundle/wordpress-syntax"]
-	path = bundle/wordpress-syntax
-	url = https://github.com/kloppster/Wordpress-Vim-Syntax.git
 [submodule "bundle/js-indenter"]
 	path = bundle/js-indenter
 	url = https://github.com/jiangmiao/simple-javascript-indenter.git
