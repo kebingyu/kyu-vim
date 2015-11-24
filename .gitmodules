@@ -32,9 +32,6 @@
 [submodule "bundle/genutils"]
 	path = bundle/genutils
 	url = https://github.com/vim-scripts/genutils.git
-[submodule "bundle/perforce"]
-	path = bundle/perforce
-	url = https://github.com/vim-scripts/perforce.git
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git

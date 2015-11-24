@@ -207,11 +207,6 @@
 	"autocmd VimEnter * NERDTree  "open nerdtree when open vim
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
 
-    " Perforce vim integration
-	if filereadable(expand(s:vim_path."perforce.conf"))
-		exec ":source ".s:vim_path."perforce.conf"
-    endif
-
     " javascript-libraries-syntax.vim
     let g:used_javascript_libs = 'jquery,backbone'
 " }"}}}
@@ -221,11 +216,6 @@
 	" to use, type :call Addtags(). One file has to be opened currently
 	if !exists("*Addtags")
 		function Addtags() 
-            if (getcwd() =~ '/dms')
-                exec "set tags+=~/.vim/tags/gcommon"
-                exec "set tags+=~/.vim/tags/vcommon"
-                exec "set tags+=~/.vim/tags/multivertical"
-            endif 
 			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
 			if filereadable(s:tag_file_path.l:name)
 				exec "set tags+=".s:tag_file_path.l:name
