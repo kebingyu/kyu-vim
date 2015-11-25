@@ -8,3 +8,4 @@ bundle/taglist/doc/tags
 perforce.conf
 .DS_Store
 bundle/.DS_Store
+vimrc.local

@@ -286,8 +286,8 @@
 " }"}}}
 " 
 " Use local vimrc if available {"{{{
-	if filereadable(expand(s:vim_path.".vimrc.local"))
-		exec ":source ".s:vim_path.".vimrc.local"
+	if filereadable(expand(s:vim_path."vimrc.local"))
+		exec ":source ".s:vim_path."vimrc.local"
     endif
 " }"}}}
 "
