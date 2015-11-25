@@ -50,3 +50,6 @@
 [submodule "bundle/php-doc"]
 	path = bundle/php-doc
 	url = https://github.com/kebingyu/php-doc.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
