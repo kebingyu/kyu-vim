@@ -22,10 +22,6 @@
 [submodule "bundle/js-indenter"]
 	path = bundle/js-indenter
 	url = https://github.com/jiangmiao/simple-javascript-indenter.git
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
-	ignore = dirty
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
