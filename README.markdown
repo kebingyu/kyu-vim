@@ -20,4 +20,5 @@ Plugins I used to make Vim a great PHP IDE:
 * neocomplcache: super powerful autocompletion
 * syntastic: language syntax checkup
 * php-doc: lightweight commenter
-* vcscommand: svn/git wrapper
+* fugitive: git wrapper
+* obsession: session controll
