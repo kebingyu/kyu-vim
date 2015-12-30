@@ -1,6 +1,6 @@
 " php-doc
-let g:pdv_cfg_Author    = 'Kebing Yu (kyu@quinstreet.com)'
-let g:pdv_cfg_Copyright = 'Copyright (c) 2011 Quinstreet, Inc. (www.quinstreet.com)'
+let g:pdv_cfg_Author    = ''
+let g:pdv_cfg_Copyright = ''
 let g:pdv_cfg_License   = 'All rights reserved'
 let g:pdv_print_access  = 0
 let g:pdv_print_name    = 0
