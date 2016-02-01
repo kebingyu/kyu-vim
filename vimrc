@@ -157,6 +157,8 @@
 	noremap <leader>W :w !sudo tee % > /dev/null
 	" close all windows but the current
 	map <leader>o <C-W><C-O>
+    map <leader>q <c-w>q<c-w>_
+    map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 	" vimgrep
 	nmap <leader>n :cn<cr>
 	nmap <leader>w :cw<cr>
@@ -175,6 +177,9 @@
     " documentor
     inoremap <C-P> <ESC>:call DocDefault()<CR>i
     nnoremap <C-P> :call DocDefault()<CR>
+    " ctrlp
+    silent! map <F2> :CtrlPMixed<CR>
+    silent! map <F3> :CtrlPTag<CR>
 " }"}}}
 "
 " Plugins {"{{{
@@ -209,6 +214,9 @@
 
     " javascript-libraries-syntax.vim
     let g:used_javascript_libs = 'jquery,backbone'
+
+    " ctrlp
+    let g:ctrlp_open_new_file = 'h'
 " }"}}}
 "
 " My Functions {"{{{
