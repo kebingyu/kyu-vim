@@ -157,12 +157,17 @@
 	noremap <leader>W :w !sudo tee % > /dev/null
 	" close all windows but the current
 	map <leader>o <C-W><C-O>
+    " close the current window and max the next focused one
     map <leader>q <c-w>q<c-w>_
+    " open file in current directory
     map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 	" vimgrep
 	nmap <leader>n :cn<cr>
-	nmap <leader>w :cw<cr>
 	nmap <leader>p :cp<cr>
+    " list search result
+	nmap <leader>w :cw<cr>
+    " Search word under current cursor within the directory of current file
+    map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j " . expand("%:h") . "/**" <Bar> cw<CR>
 	" ctags: open definition in a split window
 	map <leader>j <C-W>g]
     " Syntastic
