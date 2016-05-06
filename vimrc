@@ -87,7 +87,9 @@
 " }"}}}
 "
 " Formatting {"{{{
-	set scrolloff=1					" 1 line margin when moving cursor
+    " line margin when moving cursor, use 999 to keep the cursor centered when switching buffer.
+    " See http://vim.wikia.com/wiki/Avoid_scrolling_when_switch_buffers
+	set scrolloff=999
 	set wrapscan
 	"set paste						" prevent vim from adding incremented tabs when pasting
 	set ai							" auto increment: not compatible with paste
