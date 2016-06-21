@@ -22,14 +22,13 @@
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	set virtualedit=onemore				" allow for cursor beyond last character
 	"set spell							" spell checking on
-	"au BufWinLeave * silent! mkview	" make vim save view (state) (folds, cursor, etc)
-	"au BufWinEnter * silent! loadview	" make vim load view (state) (folds, cursor, etc)
 	set ffs=unix,dos,mac
 	set nobackup
 	set noswapfile
 	let mapleader = ","					" do extra key combinations with a map leader 
 	"set autochdir						" automatically change working dir to current opened file
 	set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+    set lazyredraw
 " }"}}}
 "
 " Vim UI {"{{{
@@ -47,9 +46,6 @@
 	set t_Co=256
 	colorscheme wombat256mod
 	set cursorline			" hightlight current line
-	" only highlight current line under cursor
-	autocmd WinEnter * setlocal cursorline
-	autocmd WinLeave * setlocal nocursorline
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
 	if has("statusline")
@@ -98,18 +94,27 @@
 	set ts=4
 	set sw=4
 	set softtabstop=4 				" let backspace delete indent
-	autocmd FileType c,cpp,cc  set cindent
-	autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-	autocmd FileType js setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-	autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
-	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    " remove '-' from word end list
-    autocmd FileType php setlocal iskeyword-=-
-	"autocmd FileType c,cpp,java,php,js,perl,python,twig,xml,yml
-	au BufRead,BufNewFile *.tpl set filetype=html
-	au BufRead,BufNewFile *.mtml set filetype=xhtml
-	"au BufRead,BufNewFile *.js set syntax=jquery
+    "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+    augroup vimrc_autocmd
+        autocmd!
+        " only highlight current line under cursor
+        autocmd WinEnter * setlocal cursorline
+        autocmd WinLeave * setlocal nocursorline
+        " filetype
+        autocmd FileType c,cpp,cc  set cindent
+        autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+        autocmd FileType js setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+        autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+        " remove '-' from word end list
+        autocmd FileType php setlocal iskeyword-=-
+        "au BufRead,BufNewFile *.tpl set filetype=html
+        "au BufRead,BufNewFile *.mtml set filetype=xhtml
+        "au BufRead,BufNewFile *.js set syntax=jquery
+        " save/load view
+        "au BufWinLeave * silent! mkview	" make vim save view (state) (folds, cursor, etc)
+        "au BufWinEnter * silent! loadview	" make vim load view (state) (folds, cursor, etc)
+    augroup END
 	set foldmethod=marker
 	" set row length and highlight text goes over
 	set textwidth=120
