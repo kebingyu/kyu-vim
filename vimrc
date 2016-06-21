@@ -15,6 +15,9 @@
 	set background=dark					" assume a dark background
 	filetype plugin indent on			" indent automatically depending on filetype
 	syntax on							" syntax highlighting
+    set synmaxcol=128
+    set ttyfast                         " a fast terminal
+    set ttyscroll=3
 	"set mouse=a						" automatically enable mouse usage
 	scriptencoding utf-8
     set fileencodings=utf-8,gb2312,gbk,gb18030
@@ -28,7 +31,6 @@
 	let mapleader = ","					" do extra key combinations with a map leader 
 	"set autochdir						" automatically change working dir to current opened file
 	set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-    set lazyredraw
 " }"}}}
 "
 " Vim UI {"{{{
@@ -45,7 +47,7 @@
     endif
 	set t_Co=256
 	colorscheme wombat256mod
-	set cursorline			" hightlight current line
+	"set cursorline			" hightlight current line
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
 	if has("statusline")
@@ -97,9 +99,9 @@
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     augroup vimrc_autocmd
         autocmd!
-        " only highlight current line under cursor
-        autocmd WinEnter * setlocal cursorline
-        autocmd WinLeave * setlocal nocursorline
+        " highlight current line when entering a new window
+        "autocmd WinEnter * setlocal cursorline
+        "autocmd WinLeave * setlocal nocursorline
         " filetype
         autocmd FileType c,cpp,cc  set cindent
         autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
