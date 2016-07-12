@@ -5,7 +5,7 @@
 	execute pathogen#helptags()
 	let s:vim_path        = $HOME."/.vim/"
 	let s:working_path    = "/var/www/sites/"
-	let s:tag_file_path   = s:vim_path."tags/"
+	let s:tag_base_path   = s:vim_path."tags/"
 	let s:vim_bundle_path = s:vim_path."bundle/"
 " }"}}}
 "
@@ -239,11 +239,14 @@
 	if !exists("*Addtags")
 		function Addtags() 
 			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
-			if filereadable(s:tag_file_path.l:name)
-				exec "set tags+=".s:tag_file_path.l:name
-				echohl WarningMsg | echo "Succ to add tags! [name: ".l:name."]" | echohl None
+            let l:tag_path = s:tag_base_path.l:name
+			if isdirectory(l:tag_path)
+                for l:fpath in split(globpath(l:tag_path, '*'), '\n')
+				    exec "set tags+=".l:fpath
+                endfor
+				echohl WarningMsg | echo "Succ to add tags! [path: ".l:tag_path."]" | echohl None
 			else
-				echohl WarningMsg | echo "Fail to add tags! No tags in this file's path.[name: ".l:name."]" | echohl None
+				echohl WarningMsg | echo "Fail to add tags! Folder path does not exits.[path: ".l:tag_path."]" | echohl None
 			endif
 		endfunction
 	endif
@@ -252,11 +255,14 @@
 	if !exists("*Deltags")
 		function Deltags()
 			let l:name = tolower(matchstr(getcwd(), '\zs\/.*\/\ze/\=\zs\S\+\ze/\=$'))
-			exec "set tags-=".s:tag_file_path.l:name
-			if filereadable(s:tag_file_path.l:name)
-				echohl WarningMsg | echo "Succ to del tags! [name: ".l:name."]" | echohl None
+            let l:tag_path = s:tag_base_path.l:name
+			if isdirectory(l:tag_path)
+                for l:fpath in split(globpath(l:tag_path, '*'), '\n')
+				    exec "set tags-=".l:fpath
+                endfor
+				echohl WarningMsg | echo "Succ to del tags! [path: ".l:tag_path."]" | echohl None
 			else
-				echohl WarningMsg | echo "Succ to del tags! But no tags in this file's path.[name: ".l:name."]" | echohl None
+				echohl WarningMsg | echo "Fail to del tags! Folder path does not exits.[path: ".l:tag_path."]" | echohl None
 			endif
 		endfunction
 	endif
