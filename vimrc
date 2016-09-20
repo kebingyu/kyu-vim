@@ -47,7 +47,7 @@
     endif
 	set t_Co=256
 	colorscheme wombat256mod
-	"set cursorline			" hightlight current line
+	set cursorline			" hightlight current line
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
 	if has("statusline")
@@ -133,8 +133,8 @@
 "
 " Key Mapping {"{{{
 	" Ctrl+kjhl Navigation between splitted windows
-	map <C-J> <C-W>j<C-W>_
-	map <C-K> <C-W>k<C-W>_
+	map <C-J> Hmx`` \|<C-W>j<C-W>_`xzt``
+	map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
     " quick move to head/tail
@@ -244,7 +244,7 @@
                 for l:fpath in split(globpath(l:tag_path, '*'), '\n')
 				    exec "set tags+=".l:fpath
                 endfor
-				echohl WarningMsg | echo "Succ to add tags! [path: ".l:tag_path."]" | echohl None
+				echohl ModeMsg | echo "Succ to add tags! [path: ".l:tag_path."]" | echohl None
 			else
 				echohl WarningMsg | echo "Fail to add tags! Folder path does not exits.[path: ".l:tag_path."]" | echohl None
 			endif
@@ -260,7 +260,7 @@
                 for l:fpath in split(globpath(l:tag_path, '*'), '\n')
 				    exec "set tags-=".l:fpath
                 endfor
-				echohl WarningMsg | echo "Succ to del tags! [path: ".l:tag_path."]" | echohl None
+				echohl ModeMsg | echo "Succ to del tags! [path: ".l:tag_path."]" | echohl None
 			else
 				echohl WarningMsg | echo "Fail to del tags! Folder path does not exits.[path: ".l:tag_path."]" | echohl None
 			endif
