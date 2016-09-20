@@ -18,6 +18,7 @@
     set synmaxcol=128
     set ttyfast                         " a fast terminal
     set ttyscroll=3
+    set lazyredraw
 	"set mouse=a						" automatically enable mouse usage
 	scriptencoding utf-8
     set fileencodings=utf-8,gb2312,gbk,gb18030
@@ -47,7 +48,7 @@
     endif
 	set t_Co=256
 	colorscheme wombat256mod
-	set cursorline			" hightlight current line
+	"set cursorline			" hightlight current line
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
 	if has("statusline")
@@ -133,6 +134,7 @@
 "
 " Key Mapping {"{{{
 	" Ctrl+kjhl Navigation between splitted windows
+    " Stop scrolling when switching buffer: Hmx - remember window position; xzt - restore window position
 	map <C-J> Hmx`` \|<C-W>j<C-W>_`xzt``
 	map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
 	map <C-H> <C-W>h<C-W>_
