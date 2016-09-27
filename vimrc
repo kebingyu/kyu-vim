@@ -136,7 +136,9 @@
 	" Ctrl+kjhl Navigation between splitted windows
     " Stop scrolling when switching buffer: Hmx - remember window position; xzt - restore window position
 	map <C-J> Hmx`` \|<C-W>j<C-W>_`xzt``
+	map <C-J><C-J> <C-F>
 	map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
+	map <C-K><C-K> <C-B>
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
     " quick move to head/tail
