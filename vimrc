@@ -233,6 +233,10 @@
 
     " ctrlp
     let g:ctrlp_open_new_file = 'h'
+
+    " syntastic
+    let g:syntastic_php_checkers=['php', 'phpcs']
+    let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 " }"}}}
 "
 " My Functions {"{{{

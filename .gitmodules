@@ -55,9 +55,6 @@
 [submodule "bundle/brightscript-syntax"]
 	path = bundle/brightscript-syntax
 	url = https://github.com/chooh/brightscript.vim.git
-[submodule "bundle/colorscheme-mayansmoke"]
-	path = bundle/colorscheme-mayansmoke
-	url = https://github.com/vim-scripts/mayansmoke.git
 [submodule "bundle/php-syntax-5.6"]
 	path = bundle/php-syntax-5.6
 	url = https://github.com/StanAngeloff/php.vim.git
