@@ -1,11 +1,8 @@
 tags/*
 sessions/*
 .NERDTreeBookmarks
-bundle/std_c/doc/tags
-bundle/neocomplcache/doc/tags
-bundle/taglist/doc/tags
 .netrwhist
 perforce.conf
 .DS_Store
-bundle/.DS_Store
 vimrc.local
+bundle
