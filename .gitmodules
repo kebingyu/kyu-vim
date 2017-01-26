@@ -4,9 +4,6 @@
 [submodule "bundle/DBGPavim"]
 	path = bundle/DBGPavim
 	url = https://github.com/brookhong/DBGPavim.git
-[submodule "bundle/obsession"]
-	path = bundle/obsession
-	url = https://github.com/tpope/vim-obsession.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -19,15 +16,9 @@
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
-[submodule "bundle/js-indenter"]
-	path = bundle/js-indenter
-	url = https://github.com/jiangmiao/simple-javascript-indenter.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "bundle/genutils"]
-	path = bundle/genutils
-	url = https://github.com/vim-scripts/genutils.git
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
@@ -40,9 +31,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/php-doc"]
 	path = bundle/php-doc
 	url = https://github.com/kebingyu/php-doc.git
@@ -52,9 +40,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "bundle/brightscript-syntax"]
-	path = bundle/brightscript-syntax
-	url = https://github.com/chooh/brightscript.vim.git
 [submodule "bundle/php-syntax-5.6"]
 	path = bundle/php-syntax-5.6
 	url = https://github.com/StanAngeloff/php.vim.git
