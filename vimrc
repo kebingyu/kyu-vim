@@ -47,7 +47,8 @@
 	    set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI
     endif
 	set t_Co=256
-	colorscheme wombat256mod
+	"colorscheme wombat256mod
+    colorscheme PaperColor
 	"set cursorline			" hightlight current line
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
