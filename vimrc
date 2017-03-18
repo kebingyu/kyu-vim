@@ -99,7 +99,9 @@
 	set softtabstop=4 				" let backspace delete indent
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     augroup vimrc_autocmd
+        " clear autogroup
         autocmd!
+        autocmd BufWritePost ~/.vim/vimrc source %
         " highlight current line when entering a new window
         "autocmd WinEnter * setlocal cursorline
         "autocmd WinLeave * setlocal nocursorline
@@ -196,6 +198,13 @@
     " ctrlp
     silent! map <F2> :CtrlPMixed<CR>
     silent! map <F3> :CtrlPTag<CR>
+    " PHPUnit
+    " run all tests in test folder
+    nmap <Leader>pa :!clear && ./vendor/bin/phpunit<cr>
+    " run all tests in current file
+    nmap <Leader>pf :!clear && ./vendor/bin/phpunit %<cr>
+    " run test name under cursor
+    nmap <Leader>pm yiw:!clear && ./vendor/bin/phpunit --filter "<cr>
 " }"}}}
 "
 " Plugins {"{{{
