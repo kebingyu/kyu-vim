@@ -247,6 +247,7 @@
     " syntastic
     let g:syntastic_php_checkers=['php', 'phpcs']
     let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+    let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 " }"}}}
 "
 " My Functions {"{{{

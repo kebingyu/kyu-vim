@@ -46,3 +46,9 @@
 [submodule "bundle/papercolor"]
 	path = bundle/papercolor
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "bundle/MatchTagAlways"]
+	path = bundle/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/tmhedberg/matchit.git
