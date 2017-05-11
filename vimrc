@@ -114,7 +114,7 @@
         autocmd FileType php set omnifunc=phpcomplete#CompletePHP
         " remove '-' from word end list
         autocmd FileType php setlocal iskeyword-=-
-        "au BufRead,BufNewFile *.tpl set filetype=html
+        au BufRead,BufNewFile *.vue set filetype=html
         "au BufRead,BufNewFile *.mtml set filetype=xhtml
         "au BufRead,BufNewFile *.js set syntax=jquery
         " save/load view
