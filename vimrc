@@ -197,11 +197,8 @@
     inoremap <C-P> <ESC>:call DocDefault()<CR>i
     nnoremap <C-P> :call DocDefault()<CR>
     " ctrlp
-    nmap <F2> :CtrlPMixed<CR>
-    nmap <F3> :CtrlPTag<CR>
-    nmap <F3> :CtrlPMRUFiles<CR>
-    let g:ctrlp_custom_ignore='node_modules\DS_Store\|git'
-    let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
+    silent! map <F2> :CtrlPMixed<CR>
+    silent! map <F3> :CtrlPTag<CR>
     " PHPUnit
     " run all tests in test folder
     nmap <Leader>pa :!clear && ./vendor/bin/phpunit<cr>
@@ -241,6 +238,9 @@
 	"autocmd VimEnter * NERDTree  "open nerdtree when open vim
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
 
+    " javascript-libraries-syntax.vim
+    let g:used_javascript_libs = 'jquery,backbone'
+
     " ctrlp
     let g:ctrlp_open_new_file = 'h'
 
@@ -248,9 +248,6 @@
     let g:syntastic_php_checkers=['php', 'phpcs']
     let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
     let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
-
-    " snipmate
-    let g:snippets_dir='~/.vim/snippets/'
 " }"}}}
 "
 " My Functions {"{{{
