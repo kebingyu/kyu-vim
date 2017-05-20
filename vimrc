@@ -336,4 +336,12 @@
     endif
 " }"}}}
 "
-" update current vimrc :so % (use when vimrc is the current file) or :source $MYVIMRC
+" Tips:
+"   - Update current vimrc :so % (use when vimrc is the current file) or :source $MYVIMRC
+"   - Marks
+"       - Type ':marks' to show all marks
+"       - Type 'm<capital_letter>' to set mark and '<capital_letter> to go to mark
+"   - Search: '\' to search below and '?' to search above.
+"   - Macros
+"       - Type '"<register_letter>p' to spit out the recorded macro.
+"       - Then use 'let @<register_letter>=' to save it for future use. 
