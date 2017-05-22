@@ -154,16 +154,9 @@
 	endif
     " open nerdtree and tagbar at the same time
 	nmap <silent> <C-N> :call ToggleAll()<CR>
-	nmap <leader>tt :TagbarToggle<cr>
-	nmap <leader>tn :NERDTreeToggle<cr>
-	" ctags: open definition in a split window
-	map <C-Y> <C-W><C-]>
 
 	" redraw the screen and clear search highlights
 	nmap <leader>l :nohls<cr>
-	" load/unload tag files
-	nmap <leader>a :call Addtags()<cr>
-	nmap <leader>d :call Deltags()<cr>
 	" save when you forget sudo
 	noremap <leader>W :w !sudo tee % > /dev/null
 	" close all windows but the current
@@ -171,7 +164,7 @@
     " close the current window and max the next focused one
     map <leader>q <c-w>q<c-w>_
     " open file in current directory
-    "map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+    "map <leader>e :e <C-R>=expand("%:p:h") . '/' <CR>
 	" vimgrep
 	nmap <leader>n :cn<cr>
 	nmap <leader>p :cp<cr>
@@ -179,10 +172,6 @@
 	nmap <leader>w :cw<cr>
     " Search word under current cursor within the directory of current file
     map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j " . expand("%:h") . "/**" <Bar> cw<CR>
-	" ctags: open definition in a split window
-	map <leader>j <C-W>g]
-    " Syntastic
-	nmap <leader>s :SyntasticReset<CR>
     
 	" Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
@@ -193,10 +182,6 @@
     " documentor
     inoremap <C-P> <ESC>:call DocDefault()<CR>i
     nnoremap <C-P> :call DocDefault()<CR>
-    " ctrlp
-    nmap <F2> :CtrlPMixed<CR>
-    nmap <F3> :CtrlPTag<CR>
-    nmap <F3> :CtrlPMRUFiles<CR>
     " PHPUnit
     " run all tests in test folder
     nmap <Leader>pa :!clear && ./vendor/bin/phpunit<cr>
@@ -207,9 +192,6 @@
 " }"}}}
 "
 " Plugins {"{{{
-    " Turn brief mode on (Simply Javascript Indenter)
-    let g:SimpleJsIndenter_BriefMode = 1
-
 	" neocomplcache configuration
 	exec ":source ".s:vim_path."neocomplcache.conf"
 	" disable preview scratch window
@@ -219,11 +201,19 @@
     let g:tagbar_width=30
     let g:tagbar_show_linenumbers=-1
     let g:tagbar_foldlevel=0
+	nmap <leader>tt :TagbarToggle<cr>
 
-	" ctag
+	" ctags
 	" load tag file when open vim
 	autocmd VimEnter * exec ":call Addtags()" 
 	"map <C-Y> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+	" open definition in a split window
+	map <C-Y> <C-W><C-]>
+	" goto definition
+	map <leader>j <C-W>g]
+	" load/unload tag files
+	nmap <leader>a :call Addtags()<cr>
+	nmap <leader>d :call Deltags()<cr>
 
 	" NERDTree
 	let NERDTreeShowBookmarks=1
@@ -235,16 +225,21 @@
 	let NERDTreeIgnore=[ '\.pyo$', '\.py\$class$', '^\.svn$', '^\.git$' ]
 	"autocmd VimEnter * NERDTree  "open nerdtree when open vim
 	"autocmd VimEnter * wincmd p  "put cursor to the file opened 
+	nmap <leader>tn :NERDTreeToggle<cr>
 
     " ctrlp
     let g:ctrlp_open_new_file = 'h'
     let g:ctrlp_custom_ignore='node_modules\DS_Store\|git'
     let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
+    nmap <F2> :CtrlPMixed<CR>
+    nmap <F3> :CtrlPTag<CR>
+    nmap <F3> :CtrlPMRUFiles<CR>
 
     " syntastic
     let g:syntastic_php_checkers=['php', 'phpcs']
     let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
     let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
+	nmap <leader>s :SyntasticReset<CR>
 
     " neosnippet
     imap <leader>e <Plug>(neosnippet_expand_or_jump)
