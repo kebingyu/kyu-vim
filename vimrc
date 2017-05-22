@@ -336,7 +336,7 @@
 " }"}}}
 "
 " Macros"{{{
-let @a="i<template></template><script>export default {}</script>"
+let @a="viwy/}O$this->pa = $pa;/constructO/* @var  */protected $pa;/construct/),l"
 ""}}}
 "
 " Tips:"{{{
