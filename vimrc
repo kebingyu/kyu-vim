@@ -47,8 +47,8 @@
 	    set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI
     endif
 	set t_Co=256
-	"colorscheme wombat256mod
-    colorscheme PaperColor
+	colorscheme wombat256mod
+    "colorscheme PaperColor
 	"set cursorline			" hightlight current line
 	"set cursorcolumn
 	set laststatus=2		" always show status line even when only one file open
@@ -336,7 +336,11 @@
     endif
 " }"}}}
 "
-" Tips:
+" Macros"{{{
+let @a="i<template></template><script>export default {}</script>"
+""}}}
+"
+" Tips:"{{{
 "   - Update current vimrc :so % (use when vimrc is the current file) or :source $MYVIMRC
 "   - Marks
 "       - Type ':marks' to show all marks
@@ -344,4 +348,6 @@
 "   - Search: '\' to search below and '?' to search above.
 "   - Macros
 "       - Type '"<register_letter>p' to spit out the recorded macro.
-"       - Then use 'let @<register_letter>=' to save it for future use. 
+"       - Then use 'let @<register_letter>=' to save it for future use.
+""}}}
+"
