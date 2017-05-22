@@ -142,9 +142,6 @@
 	map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
-    " quick move to head/tail
-	nmap <leader>h 0<cr>
-	nmap <leader>t $<cr>
 	" maximize the current window
 	map <C-M> <C-W>_
 	" move the current window up
@@ -174,7 +171,7 @@
     " close the current window and max the next focused one
     map <leader>q <c-w>q<c-w>_
     " open file in current directory
-    map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+    "map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 	" vimgrep
 	nmap <leader>n :cn<cr>
 	nmap <leader>p :cp<cr>
@@ -248,6 +245,13 @@
     let g:syntastic_php_checkers=['php', 'phpcs']
     let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
     let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+    " neosnippet
+    imap <leader>e <Plug>(neosnippet_expand_or_jump)
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    let g:neosnippet#enable_snipmate_compatibility = 1
+    let g:neosnippet#snippets_directory = '~/.vim/snippets'
+    let g:neosnippet#disable_runtime_snippets = {'_' : 1}
 " }"}}}
 "
 " My Functions {"{{{
