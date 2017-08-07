@@ -2,7 +2,5 @@ tags/*
 sessions/*
 .NERDTreeBookmarks
 .netrwhist
-perforce.conf
 .DS_Store
 vimrc.local
-bundle

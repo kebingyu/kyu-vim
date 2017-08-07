@@ -115,6 +115,7 @@
         " remove '-' from word end list
         autocmd FileType php setlocal iskeyword-=-
         au BufRead,BufNewFile *.vue set filetype=html
+        au BufRead,BufNewFile *.apib set filetype=markdown
         "au BufRead,BufNewFile *.mtml set filetype=xhtml
         "au BufRead,BufNewFile *.js set syntax=jquery
         " save/load view
@@ -138,8 +139,10 @@
 " Key Mapping {"{{{
 	" Ctrl+kjhl Navigation between splitted windows
     " Stop scrolling when switching buffer: Hmx - remember window position; xzt - restore window position
-	map <C-J> Hmx`` \|<C-W>j<C-W>_`xzt``
-	map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
+	"map <C-J> Hmx`` \|<C-W>j<C-W>_`xzt``
+	"map <C-K> Hmx`` \|<C-W>k<C-W>_`xzt``
+	map <C-J> <C-W>j<C-W>_
+	map <C-K> <C-W>k<C-W>_
 	map <C-H> <C-W>h<C-W>_
 	map <C-L> <C-W>l<C-W>_
 	" maximize the current window
@@ -172,6 +175,11 @@
 	nmap <leader>w :cw<cr>
     " Search word under current cursor within the directory of current file
     map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j " . expand("%:h") . "/**" <Bar> cw<CR>
+    " Fix syntax highlighting in vue component due to multiple languages in one file
+    nmap <leader>v :syntax sync fromstart<cr>
+    " Reset syntax highlighting when one line is too long
+    nmap <leader>h :set smc=0<cr>
+
     
 	" Wrapped lines goes down/up to next row, rather than next line in file.
     nnoremap j gj
@@ -229,7 +237,7 @@
 
     " ctrlp
     let g:ctrlp_open_new_file = 'h'
-    let g:ctrlp_custom_ignore='node_modules\DS_Store\|git'
+    let g:ctrlp_custom_ignore='node_modules\|DS_Store\|vendor\|git'
     let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
     nmap <F2> :CtrlPMixed<CR>
     nmap <F3> :CtrlPTag<CR>
@@ -247,6 +255,9 @@
     let g:neosnippet#enable_snipmate_compatibility = 1
     let g:neosnippet#snippets_directory = '~/.vim/snippets'
     let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+    
+    " vim-markdown
+    let g:vim_markdown_folding_disabled = 1
 " }"}}}
 "
 " My Functions {"{{{
