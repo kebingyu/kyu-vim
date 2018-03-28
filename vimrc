@@ -115,7 +115,9 @@
         " remove '-' from word end list
         autocmd FileType php setlocal iskeyword-=-
         au BufRead,BufNewFile *.vue set filetype=html
+        au BufRead,BufNewFile *.yql set filetype=sql
         au BufRead,BufNewFile *.apib set filetype=markdown
+        au! BufRead,BufNewFile *.proto setfiletype proto
         "au BufRead,BufNewFile *.mtml set filetype=xhtml
         "au BufRead,BufNewFile *.js set syntax=jquery
         " save/load view
@@ -246,7 +248,7 @@
     " syntastic
     let g:syntastic_php_checkers=['php', 'phpcs']
     let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
-    let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
+    let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'java'] }
 	nmap <leader>s :SyntasticReset<CR>
 
     " neosnippet
@@ -347,7 +349,7 @@
 " }"}}}
 "
 " Macros"{{{
-let @a="viwy/}O$this->pa = $pa;/constructO/* @var  */protected $pa;/construct/),l"
+let @a="viwy/}O$this->pa = $pa;/constructO/** @var  */protected $pa;/construct/),l"
 ""}}}
 "
 " Tips:"{{{
