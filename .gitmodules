@@ -58,6 +58,3 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "bundle/vim-javacomplete2"]
-	path = bundle/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2.git
