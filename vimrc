@@ -211,7 +211,7 @@
     " tagbar
     let g:tagbar_width=30
     let g:tagbar_show_linenumbers=-1
-    let g:tagbar_foldlevel=0
+    let g:tagbar_foldlevel=1
 	nmap <leader>tt :TagbarToggle<cr>
 
 	" ctags
