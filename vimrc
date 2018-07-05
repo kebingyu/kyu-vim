@@ -32,6 +32,7 @@
 	let mapleader = ","					" do extra key combinations with a map leader 
 	"set autochdir						" automatically change working dir to current opened file
 	set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+    set updatetime=1000
 " }"}}}
 "
 " Vim UI {"{{{
@@ -211,7 +212,7 @@
     " tagbar
     let g:tagbar_width=30
     let g:tagbar_show_linenumbers=-1
-    let g:tagbar_foldlevel=0
+    let g:tagbar_foldlevel=1
 	nmap <leader>tt :TagbarToggle<cr>
 
 	" ctags
@@ -225,6 +226,15 @@
 	" load/unload tag files
 	nmap <leader>a :call Addtags()<cr>
 	nmap <leader>d :call Deltags()<cr>
+
+    " easytags
+    " ctags options
+    "   1) --Java-kinds=-f Exclude class variables
+    "   2) --regex-Java Capture @Name annotation as class name
+    let g:easytags_opts = ['--Java-kinds=-f', "--regex-Java='/@Name\(\"([a-zA-Z_]+)\"\)/\1/c/'", "--exclude='*.yql'"]
+    "let g:easytags_file = s:tag_base_path
+    let g:easytags_autorecurse = 1
+    let g:easytags_auto_highlight = 0
 
 	" NERDTree
 	let NERDTreeShowBookmarks=1
@@ -261,6 +271,9 @@
     
     " vim-markdown
     let g:vim_markdown_folding_disabled = 1
+
+    " vim-json
+    let g:vim_json_syntax_conceal = 0
 " }"}}}
 "
 " My Functions {"{{{
