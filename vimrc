@@ -233,7 +233,7 @@
     "   2) --regex-Java Capture @Name annotation as class name
     let g:easytags_opts = ['--Java-kinds=-f', "--regex-Java='/@Name\(\"([a-zA-Z_]+)\"\)/\1/c/'", "--exclude='*.yql'"]
     "let g:easytags_file = s:tag_base_path
-    let g:easytags_autorecurse = 1
+    let g:easytags_autorecurse = 0
     let g:easytags_auto_highlight = 0
 
 	" NERDTree
@@ -364,6 +364,7 @@
 "
 " Macros"{{{
 let @a="viwy/}O$this->pa = $pa;/constructO/** @var  */protected $pa;/construct/),l"
+let @U="viwgU"
 ""}}}
 "
 " Tips:"{{{
