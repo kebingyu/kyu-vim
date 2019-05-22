@@ -113,6 +113,7 @@
         autocmd FileType js setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
         autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType php set omnifunc=phpcomplete#CompletePHP
         autocmd FileType java setlocal omnifunc=javacomplete#Complete
         " remove '-' from word end list
